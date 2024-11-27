@@ -1,11 +1,13 @@
 package webdriver;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import javax.xml.xpath.XPathExpression;
 import java.util.concurrent.TimeUnit;
 
 public class Topic_02_Selenium_Locator {
@@ -40,44 +42,87 @@ public class Topic_02_Selenium_Locator {
 
     @Test
     public void TC_01_ID() {
-            driver.findElement(By.)
+            // Tìm element có ì là FirstName
+             driver.findElement(By.id("FirstName")).sendKeys("Keane");
+             System.out.println(driver.findElement(By.id("FirstName")));
     }
 
     @Test
     public void TC_02_Class() {
-
+            driver.findElement(By.className("header-logo"));
     }
 
     @Test
     public void TC_03_Name() {
-
+            driver.findElement(By.name("DateOfBirthDay"));
     }
 
     @Test
     public void TC_04_Tagname() {
-
+            driver.findElement(By.tagName("input"));
     }
 
     @Test
     public void TC_05_LinkText() {
-
+            driver.findElement(By.linkText("Shipping & returns"));
     }
+    // linkText sẽ lấy toàn bộ => độ chính xác cao
 
     @Test
     public void TC_06_Partial_LinkText() {
-
+            driver.findElement(By.partialLinkText("for vendor"));
     }
+    // Partial_LinkText lấy 1 phần text nhưng độ chính xác ko cao
 
     @Test
     public void TC_07_Css() {
+            // CSS vs ID
+            driver.findElement(By.cssSelector("input[id='FirstName']"));
+            driver.findElement(By.cssSelector("input#FirstName"));
+            driver.findElement(By.cssSelector("#FirstName"));
 
+            // CSS vs Class
+            driver.findElement(By.cssSelector("div[class='page-title']"));
+            driver.findElement(By.cssSelector("div.page-title"));
+            driver.findElement(By.cssSelector(".page-title"));
+
+            // CSS vs Name
+            driver.findElement(By.cssSelector("input[name='FirstName']"));
+
+            // Css vs tagname
+            driver.findElement(By.cssSelector("input"));
+
+            // Css vs link
+            driver.findElement(By.cssSelector("a[href='/customer/addrssed']"));
+
+            // Css vs partial Link
+            driver.findElement(By.cssSelector("a[href*='addrssed']"));
+            // driver.findElement(By.cssSelector("a[href^='addrssed']");
+            // driver.findElement(By.cssSelector("a[href$='ddrssed']");
     }
 
     @Test
     public void TC_08_XPath() {
+            // Xpath vs ID
+            driver.findElement(By.xpath("//input[@id='FirstName']"));
 
+            // Xpath vs Class
+            driver.findElement(By.xpath("//div[@class='page-title']"));
+
+            // Xpath vs Name
+            driver.findElement(By.xpath("//input[@name='FirstName']"));
+
+            // Xpath vs tagname
+            driver.findElement(By.xpath("//input"));
+
+            // Xpath vs link
+            driver.findElement(By.xpath("//a[@href='/customer/addrssed']"));
+            driver.findElement(By.xpath("//a[@text()='Addrssed']"));
+
+            // Xpath vs partial Link
+            driver.findElement(By.xpath("a[contain(@href,'addrssed')]"));
+            driver.findElement(By.xpath("a[contain(text(),'addrssed')]"));
     }
-
 
     @AfterClass
     public void afterClass() {
@@ -85,7 +130,6 @@ public class Topic_02_Selenium_Locator {
             driver.quit();
     }
 }
-//
 
 
 

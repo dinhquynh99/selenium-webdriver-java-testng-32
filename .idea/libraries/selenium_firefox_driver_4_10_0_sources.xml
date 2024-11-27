@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="selenium-firefox-driver-4.10.0-sources">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/libraries/selenium-firefox-driver-4.10.0-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/selenium-api-4.10.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
