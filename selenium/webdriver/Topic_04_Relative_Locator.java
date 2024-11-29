@@ -9,6 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Topic_04_Relative_Locator {
@@ -20,7 +21,10 @@ public class Topic_04_Relative_Locator {
         String osName = System.getProperty("os.name");
 
         @BeforeClass
-        public void beforeClass() {}
+        public void beforeClass() {
+            driver = new FirefoxDriver();
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        }
 
     @Test
     public void TC_01_Relative() {
@@ -30,16 +34,26 @@ public class Topic_04_Relative_Locator {
         By loginButtonBy = By. cssSelector("button.login");
         WebElement loginButtonElement = driver.findElement(By.cssSelector("button.login-button"));
 
-        RelativeLocator.with(By.tagName("label")).above(loginButtonElement);
+        // Forgot Password link
+        WebElement forgotPasswordElement = driver.findElement(By.cssSelector("span.forgot-password"));
 
         // Remember Me checkbox
         By rememberMyCheckboxBy = By.id("RememberMe");
 
+        // Password textbox
+        By passwordTextboxBy = By.cssSelector("input#Password");
+
         WebElement rememberMeTextElement = driver
                 .findElement(RelativeLocator.with(By.tagName("label"))
                 .above(loginButtonBy)
-                .toRightOf(rememberMyCheckboxBy));
+                .toRightOf(rememberMyCheckboxBy)
+                .toLeftOf(forgotPasswordElement)
+                .below(passwordTextboxBy)
+                .near(forgotPasswordElement));
         System.out.println(rememberMeTextElement.getText());
+
+        List<WebElement> alllinks = driver.findElements(RelativeLocator.with(By.tagName("a")));
+        System.out.println(alllinks.size());
     }
 
     @AfterClass
