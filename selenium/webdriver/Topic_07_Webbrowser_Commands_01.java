@@ -2,16 +2,14 @@ package webdriver;
 
 import graphql.Assert;
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-public class Topic_07_Webbrowser_Commands {
+public class Topic_07_Webbrowser_Commands_01 {
 
     WebDriver driver;
 

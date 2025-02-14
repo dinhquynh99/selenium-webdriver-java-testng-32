@@ -22,7 +22,7 @@ public class Topic_06_Webbrowser_Commands_02 {
     }
 
     @Test
-    public void TC_01_Url() {
+    public void TC_01_Page_Url() {
         driver.get("https://live.techpanda.org/index.php/");
 
         driver.findElement(By.xpath("//div[@class='footer']//a[@title='My Account']")).click();
