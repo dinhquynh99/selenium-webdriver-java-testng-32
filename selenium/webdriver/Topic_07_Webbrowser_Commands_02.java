@@ -1,5 +1,7 @@
 package webdriver;
 
+import graphql.schema.GraphQLSchemaElement;
+import graphql.schema.visitor.GraphQLSchemaVisitorEnvironment;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -182,12 +184,6 @@ public class Topic_07_Webbrowser_Commands_02 {
         Assert.assertTrue(driver.findElement(By.cssSelector("li.special-char.not-completed")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.cssSelector("li[class='8-char not-completed']")).isDisplayed());
     }
-    }
-
-
-
-
-
 
     @AfterClass
     public void afterClass() {
@@ -203,4 +199,9 @@ public class Topic_07_Webbrowser_Commands_02 {
         }
     }
 }
+
+
+
+
+
 
