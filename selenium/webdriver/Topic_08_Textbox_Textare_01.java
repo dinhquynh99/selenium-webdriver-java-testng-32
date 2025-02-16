@@ -14,8 +14,6 @@ import java.util.concurrent.TimeUnit;
 public class Topic_08_Textbox_Textare_01 {
 
     WebDriver driver;
-    String projectPath = System.getProperty("user.dir");
-    String osName = System.getProperty("os.name");
 
     @BeforeClass
     public void beforeClass() {
