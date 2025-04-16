@@ -37,7 +37,7 @@ public class Topic_14_Authentìicarion_Alert {
 
     @Test
     public void TC_02_Authentication_Navigate() {
-        driver.get("https://the-internet.herokuapp.com/");
+        driver.get("https://the-internet.herokuapp.com/Topic_14_Authentìicarion_Alert");
 
         String basicAuthLink = driver.findElement(By.xpath("//a[text()='Basic Auth']")).getAttribute("href");
 
