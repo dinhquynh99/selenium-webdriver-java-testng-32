@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -16,7 +15,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class Topic_15_User_Action2 {
+public class Topic_16_User_Action2 {
 
     WebDriver driver;
     Actions action;
@@ -99,6 +98,32 @@ public class Topic_15_User_Action2 {
         Assert.assertEquals(driver.findElement(By.cssSelector("p#demo")).getText(),"Hello Automation Guy!");
     }
 
+    @Test
+    public void TC_04_Right_Click() throws InterruptedException {
+        driver.get("https://swisnl.github.io/jQuery-contextMenu/demo.html");
+
+       // Click chuột phải vào button
+        action.contextClick(driver.findElement(By.cssSelector("span.context-menu-one"))).perform();
+        Thread.sleep(3000);
+
+        By quitContextBy = By.cssSelector("li.context-menu-icon-quit");
+
+        Assert.assertTrue(driver.findElement(quitContextBy).isDisplayed());
+
+        // Hover mouse
+        action.moveToElement(driver.findElement(quitContextBy)).perform();
+        Thread.sleep(3000);
+
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.context-menu-icon-quit.context-menu-visible.context-menu-hover")).isDisplayed());
+
+        // Click quit
+        action.click(driver.findElement(quitContextBy)).perform();
+        Thread.sleep(3000);
+
+        driver.switchTo().alert().accept();
+
+        Assert.assertFalse(driver.findElement(quitContextBy).isDisplayed());
+    }
 
 
         @AfterClass
