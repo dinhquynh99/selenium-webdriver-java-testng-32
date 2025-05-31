@@ -47,6 +47,28 @@ public class Topic_20_Random_Popup {
 
     }
 
+    @Test
+    public void TC_02_DeHieu() throws InterruptedException {
+        driver.get("https://dehieu.vn/");
+        By contentPopup = By.cssSelector("div.modal-content");
+
+        // Hiển thị thì close đi rồi action tiếp
+        if (driver.findElements(contentPopup).size() > 0
+                && driver.findElements(contentPopup).get(0).isDisplayed()) {
+            System.out.println("___GO TO IF___");
+            driver.findElement(By.cssSelector("div.modal-content button.close")).click();
+            Thread.sleep(2000);
+        }
+
+        // Ko hiển thị thì action tiếp
+        System.out.println("___IGNORE IF___");
+        driver.findElement(By.cssSelector("input.search-form")).sendKeys("Khoá học Lập dự toán M&E");
+        driver.findElement(By.cssSelector("button.header-search")).click();
+
+        Assert.assertEquals(driver.findElement(By.cssSelector("div.course-item-detail a")).getAttribute("title"),"Khoá học Lập dự toán M&E");
+
+    }
+
     @AfterClass
     public void afterClass() {
         driver.quit();
