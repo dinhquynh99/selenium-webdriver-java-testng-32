@@ -26,14 +26,15 @@ public class Topic_23_JavascriptExecutor {
     }
 
     @Test
-    public void TC_01_NgoaiNgu24h() throws InterruptedException {
+    public void TC_01_() throws InterruptedException {
 
         // Click vào 1 element mà đnag bị che/ ẩn bằng WebElement click();
         // driver.findElement(By.cssSelector("ul.top-menu.notmobile a[href='desktops']")).click();
 
         // Click vào 1 element bằng jsExecutor nó ko quan tâm ẩn/ hiện
-        // Sai hành vi của end user => Giả lập hành vi của end user đnag thao tác trên application
+        // Sai hành vi của end user => Giả lập hành vi của end user đang thao tác trên application
         jsExecutor.executeScript("arguments[0].click();", driver.findElement(By.cssSelector("ul.top-menu.notmobile a[href='/desktops']")));
+        Thread.sleep(5000);
 
         // Lấy ra domain
         // System.out.println(jsExecutor.executeScript("return document.domain;"));

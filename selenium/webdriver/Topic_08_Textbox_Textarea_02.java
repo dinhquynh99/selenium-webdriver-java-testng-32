@@ -1,12 +1,16 @@
 package webdriver;
 
+import graphql.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class Topic_08_Textbox_Textarea_02 {
@@ -33,6 +37,9 @@ public class Topic_08_Textbox_Textarea_02 {
 
     @Test
     public void TC_02_() {
+        // Wait for all loading icon disappear
+        //Assert.assertTrue(new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.
+        //        invisibilityOfAllElements(driver.findElements(By.cssSelector("div.oxd-loading-spinner")))));
 
     }
 
