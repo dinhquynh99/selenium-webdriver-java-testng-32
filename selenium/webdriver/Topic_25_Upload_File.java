@@ -81,8 +81,8 @@ public class Topic_25_Upload_File {
         Thread.sleep(2000);
 
         // Verify file dc load lên
-        Assert.assertTrue(driver.findElement(By.xpath("//p[@class='name' and text()= '" + haGiang + "']")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.xpath("//p[@class='name' and text()= '" + hoiAn + "']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//p[@class='name' and text()= '" + haGiang + "']")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.xpath("//p[@class='name' and text()= '" + phuQuoc + "']")).isDisplayed());
 
         // click upload cho từng file
@@ -94,8 +94,8 @@ public class Topic_25_Upload_File {
         }
 
         // Verify các file đc upload thành công
-        Assert.assertTrue(driver.findElement(By.xpath("//a[text()= '" + phuQuoc + "']")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.xpath("//a[text()= '" + hoiAn + "']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//a[text()= '" + haGiang + "']")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.xpath("//a[text()= '" + phuQuoc + "']")).isDisplayed());
 
     }
