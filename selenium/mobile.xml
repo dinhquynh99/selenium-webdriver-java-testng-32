@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Mobile App" parallel="tests" thread-count="3">
+    <test name="Run on MOBILE">
+        <packages>
+            <package name="Mobile"></package>
+        </packages>
+    </test>
+
+</suite>

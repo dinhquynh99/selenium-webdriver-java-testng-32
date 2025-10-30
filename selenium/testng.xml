@@ -25,19 +25,19 @@
         </classes>
     </test>
 
-        <!--    <groups>-->
-        <!--        <run>-->
-        <!--            <include name="test"></include>-->
-        <!--        </run>-->
-        <!--    </groups>-->
+    <!--    <groups>-->
+    <!--        <run>-->
+    <!--            <include name="test"></include>-->
+    <!--        </run>-->
+    <!--    </groups>-->
 
-        <!--    <test verbose ="2" preserve-order="true" name="Run on CHROME">-->
-        <!--        <packages>-->
-        <!--            <package name="Web"></package>-->
-        <!--            <package name="Mobile"></package>-->
-        <!--        </packages>-->
+    <!--    <test verbose ="2" preserve-order="true" name="Run on CHROME">-->
+    <!--        <packages>-->
+    <!--            <package name="Web"></package>-->
+    <!--            <package name="Mobile"></package>-->
+    <!--        </packages>-->
 
-        <!--&lt;!&ndash;        <classes>&ndash;&gt;-->
-        <!--&lt;!&ndash;            <class name="TestNG.Topic_01_Annotations"></class>&ndash;&gt;-->
-        <!--&lt;!&ndash;        </classes>&ndash;&gt;-->
+    <!--&lt;!&ndash;        <classes>&ndash;&gt;-->
+    <!--&lt;!&ndash;            <class name="TestNG.Topic_01_Annotations"></class>&ndash;&gt;-->
+    <!--&lt;!&ndash;        </classes>&ndash;&gt;-->
 </suite>
