@@ -22,4 +22,8 @@ public class Web_01_Employee {
     public void TC_04_DeleteEmployee(){
 
     }
+    @Test
+    public void TC_05_UpdateEmployee(){
+
+    }
 }
